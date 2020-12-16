@@ -1,0 +1,13 @@
+---
+version: '3.6'
+services:
+  zomboid:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8766:8766
+      - 16261:16261
+    restart: unless-stopped
+    volumes:
+      - ./game-data:/home/gamer/Zomboid
